@@ -22,7 +22,7 @@ body{
 	background-repeat: no-repeat;
 	height: 100vh;
 	width: 100%;
-	font-family: "Poppins", sans-serif;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .mainContainer{
@@ -71,6 +71,10 @@ body{
 	width: 100%;
 }
 
+.nav > h3{
+	font-family: 'Times New Roman', Times, serif;
+}
+
 .nav > ul{
 	list-style: none;
 }
@@ -102,6 +106,8 @@ body{
 .calendar > #dates > *{
 	text-align: right;
 	border: 1px #000000 solid;
+	margin: 0.1em;
+	padding: 0.1em;
 }
 
 .calendar > #month{
