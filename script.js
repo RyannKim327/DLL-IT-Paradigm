@@ -51,3 +51,12 @@ window.onload = () => {
 		reloadCalendar()
 	}
 }
+
+function show($layout){
+	const contents = document.getElementsByClassName("contents")
+	for(let e = 0; e < contents.length; e++){
+		const element = contents[e]
+		element.classList.remove("show")
+	}
+	_(`#${$layout}`).classList.add("show")
+}

@@ -13,10 +13,10 @@
 				<div class="nav container">
 					<h3>IT PARADIGM</h3>
 					<ul>
-						<li>Home</li>
-						<li>Announcement</li>
-						<li>Members</li>
-						<li>Events</li>
+						<li onclick="show('home')" >Home</li>
+						<li onclick="show('announcements')">Announcement</li>
+						<li onclick="show('members')">Members</li>
+						<li onclick="show('events')">Events</li>
 					</ul>
 				</div>
 				<div class="calendar container">
@@ -38,7 +38,17 @@
 				</div>
 			</div>
 			<div class="container rightSide fill">
-				Sample
+				<div class="contents" id="home">
+					<h1>Welcome to DLL IT Paradigm</h1>
+					<h3>Troubleshooting - Programming - Multimedia Editing</h3>
+					<h5>Bachelor of Science in Information Technology</h5>
+				</div>
+				<div class="contents" id="announcements">
+					<h1>There's no announcement here</h1>
+				</div>
+				<div class="contents show" id="members">
+					
+				</div>
 			</div>
 		</div>
 	</body>

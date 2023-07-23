@@ -10,16 +10,20 @@
 :root{
 	--baseMargin: 1em;
 	--basePadding: 1em;
-	--grassWhite: #ffffff50;
-	--glassBlur: blur(40px);
+	--grassWhite: #ffffff10;
+	--glassBlur: blur(10px);
 	--radius: .5em;
+	--baseColor: #000000;
 }
 
 body{
 	background-color: #ffffff;
-	background-image: linear-gradient(to bottom right, #FEF604AA, #0D9DF8AA);
+	/* background-image: linear-gradient(to bottom right, #FEF604AA, #0D9DF8AA); */
+	background-image: url("assets/bg	.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
+	color: var(--baseColor);
 	height: 100vh;
 	width: 100%;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -52,12 +56,6 @@ body{
 	-moz-box-sizing: border-box;
 }
 
-.rightSide{
-	align-self: flex-end;
-	justify-self: flex-end;
-	margin-left: 2em;
-}
-
 .leftSide > *{
 	height: 45vh;
 	width: 100%;
@@ -81,7 +79,7 @@ body{
 
 .nav > ul > li{
 	cursor: pointer;
-	border-bottom: 1px #000000 solid;
+	border-bottom: 1px var(--baseColor) solid;
 	padding: .1em.25em;
 }
 
@@ -101,15 +99,48 @@ body{
 .calendar > .dates{
 	display: grid;
 	grid-template-columns: auto auto auto auto auto auto auto;
+	font-variant: small-caps;
 }
 
 .calendar > #dates > *{
 	text-align: right;
-	border: 1px #000000 solid;
+	border: 1px var(--baseColor) solid;
 	margin: 0.1em;
 	padding: 0.1em;
 }
 
 .calendar > #month{
 	text-align: center;
+}
+
+.rightSide{
+	display: flex;
+	flex-direction: row;
+	margin-left: 2em;
+	justify-content: center;
+}
+
+.rightSide > .contents{
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.rightSide > .contents > h1{
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	text-align: center;
+}
+
+.rightSide > .contents > h3{
+	font-family: 'Courier New', Courier, monospace;
+	font-variant: small-caps;
+	text-align: center;
+}
+.rightSide > .contents > h5{
+	font-variant: small-caps;
+	text-align: center;
+}
+
+.rightSide > .show{
+	display: flex;
 }
