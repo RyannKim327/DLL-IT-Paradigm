@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 *{
 	margin: 0;
 	padding: 0;
@@ -15,6 +17,7 @@
 	--radius: .5em;
 	--baseColor: #000000;
 	--baseGray: #dedede;
+	--calendar: #ff0000;
 }
 
 body{
@@ -28,6 +31,7 @@ body{
 	height: 100vh;
 	width: 100%;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	overflow: hidden;
 }
 
 .mainContainer{
@@ -110,8 +114,20 @@ body{
 	padding: 0.1em;
 }
 
+.calendar > #dates > .clickedDate{
+	border: 1px var(--calendar) solid;
+	color: var(--calendar);
+}
+
 .calendar > #month{
 	text-align: center;
+}
+
+.calendar > #currentTime{
+	text-align: center;
+	margin: 1em 0;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: bolder;
 }
 
 .rightSide{
@@ -169,17 +185,18 @@ body{
 
 .rightSide > #members > .members-card > img{
 	border-radius: .5em;
+	width: 75%;
 }
 
 .rightSide > #members > .members-card:hover{
-	animation: ikot-ikot-lang .25s;
+	animation: ikot-ikot-lang .25s alternate;
 }
 
 @keyframes ikot-ikot-lang {
 	0%{
 		scale: 1;
 	}50%{
-		scale: 3;
+		scale: 1.5;
 	}100%{
 		scale: 1;
 	}

@@ -11,6 +11,34 @@ window.onload = async () => {
 	}
 	const allData = await getAllData()
 	const eventData = allData.events
+
+	let checkEvent = (month, day, year, start) => {
+		if(start){
+			_("#home").classList.remove("show")
+			_("#announcements").classList.remove("show")
+			_("#members").classList.remove("show")
+			_("#events").classList.remove("show")
+			_("#events").classList.add("show")
+		}
+		const today = eventData[`${month + 1}-${day}-${year}`]
+		if(today != undefined){
+			_("#eventToday").textContent = today.title
+			_("#eventDescription").textContent = today.description
+			if(today.images.length > 0){
+				const eventImg = today.images
+				for(let image = 0; image < eventImg.length; image++){
+					const img = document.createElement("img")
+					img.src = eventImg[image]
+					_("#images").appendChild = img
+				}
+			}
+		}else{
+			_("#eventToday").textContent = "There's no event here"
+			_("#eventDescription").textContent = ""
+			_("#images").innerHTML = ""
+		}
+	}
+
 	const months = [
 		"January", "Febuary", "March", "April", "May", "June",
 		"July", "August", "September", "October", "November", "December"
@@ -31,37 +59,34 @@ window.onload = async () => {
 				d.textContent = ""
 				d.style.border = "0"
 			}else{
+				if((i - day) == today.getDate()){
+					d.classList.add("clickedDate")
+				}
 				d.textContent = i - day
 				d.onclick = () => {
-					_("#home").classList.remove("show")
-					_("#announcements").classList.remove("show")
-					_("#members").classList.remove("show")
-					_("#events").classList.remove("show")
-					_("#events").classList.add("show")
-					const today = eventData[`${month + 1}-${d.textContent}-${year}`]
-					if(today != undefined){
-						_("#eventToday").textContent = today.title
-						_("#eventDescription").textContent = today.description
-						if(today.images.length > 0){
-							const eventImg = today.images
-							for(let image = 0; image < eventImg.length; image++){
-								const img = document.createElement("img")
-								img.src = eventImg[image]
-								_("#images").appendChild = img
-							}
-						}
-					}else{
-						_("#eventToday").textContent = "There's no event here"
-						_("#eventDescription").textContent = ""
-						_("#images").innerHTML = ""
+					checkEvent(month, d.textContent, year, true)
+					let calendars = _(".clickedDate")
+					if(calendars){
+						calendars.classList.remove("clickedDate")
 					}
+					d.classList.add("clickedDate")
 				}
 			}
 			date.appendChild(d)
 		}
 		_("#month").textContent = `${months[month]} ${year}`
+		checkEvent(month, day, year, false)
+		function clock(){
+			const _today = new Date()
+			_("#currentTime").textContent = `${timeConvert(_today.getHours())}:${timeConvert(_today.getMinutes())}:${timeConvert(_today.getSeconds())}`
+			setTimeout(() => {
+				clock()
+			}, 1);
+		}
+		clock()
 	}
 	reloadCalendar()
+
 
 	_("#prev").onclick = () => {
 		if(month > 0){
@@ -87,7 +112,6 @@ window.onload = async () => {
 	let officer = Object.keys(officers)
 	for(let o in officer){
 		const off = officer[o]
-		console.log(officers[off])
 		const doc = document.createElement("div")
 		const name = document.createElement("h3")
 		const pos = document.createElement("h5")
@@ -105,6 +129,13 @@ window.onload = async () => {
 
 		_("#members").appendChild(doc)
 	}
+}
+
+function timeConvert(n){
+	if(n < 10){
+		n = `0${n}`
+	}
+	return n
 }
 
 function show($layout){
