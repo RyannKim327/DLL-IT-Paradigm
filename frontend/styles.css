@@ -171,6 +171,30 @@ body{
 	border-radius: .5em;
 }
 
+.rightSide > #members > .members-card:hover{
+	animation: ikot-ikot-lang .25s;
+}
+
+@keyframes ikot-ikot-lang {
+	0%{
+		scale: 1;
+	}50%{
+		scale: 3;
+	}100%{
+		scale: 1;
+	}
+}
+
+@-webkit-keyframes ikot-ikot-lang {
+	0%{
+		scale: 1;
+	}50%{
+		scale: 3;
+	}100%{
+		scale: 1;
+	}
+}
+
 .rightSide> #events > #images{
 	display: flex;
 	flex-direction: row;
