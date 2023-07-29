@@ -1,6 +1,33 @@
 {
+	"officers": {
+		"president": {
+			"name": "Hannah Mae Lampas",
+			"photo": ""
+		},
+		"vice-president": {
+			"name": "Sherlyn Mae Serdan",
+			"photo": ""
+		},
+		"secretary": {
+			"name": "",
+			"photo": ""
+		},
+		"treasurer": {
+			"name": "",
+			"photo": ""
+		},
+		"auditor": {
+			"name": "",
+			"photo": ""
+		},
+		"p.i.o": {
+			"name": "",
+			"photo": ""
+		}
+	},
+	"members": [],
 	"events": {
-		"7-27-2023": {
+		"7-28-2023": {
 			"title": "Announcement of Winner",
 			"description": "Test",
 			"images": []

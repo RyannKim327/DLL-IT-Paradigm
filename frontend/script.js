@@ -3,13 +3,14 @@ function _ (element){
 }
 
 window.onload = async () => {
-	const getAllEvents = async () => {
-		let data = fetch("/all-events").then((response) => {
+	const getAllData = async () => {
+		let data = fetch("/all-data").then((response) => {
 			return response.json()
 		})
 		return data
 	}
-	const eventData = await getAllEvents()
+	const allData = await getAllData()
+	const eventData = allData.events
 	const months = [
 		"January", "Febuary", "March", "April", "May", "June",
 		"July", "August", "September", "October", "November", "December"
@@ -32,6 +33,11 @@ window.onload = async () => {
 			}else{
 				d.textContent = i - day
 				d.onclick = () => {
+					_("#home").classList.remove("show")
+					_("#announcements").classList.remove("show")
+					_("#members").classList.remove("show")
+					_("#events").classList.remove("show")
+					_("#events").classList.add("show")
 					const today = eventData[`${month + 1}-${d.textContent}-${year}`]
 					if(today != undefined){
 						_("#eventToday").textContent = today.title
@@ -75,6 +81,29 @@ window.onload = async () => {
 			year += 1
 		}
 		reloadCalendar()
+	}
+
+	let officers =  allData.officers
+	let officer = Object.keys(officers)
+	for(let o in officer){
+		const off = officer[o]
+		console.log(officers[off])
+		const doc = document.createElement("div")
+		const name = document.createElement("h3")
+		const pos = document.createElement("h5")
+		const photo = document.createElement("img")
+
+		doc.classList.add("members-card")
+
+		name.textContent = officers[off].name
+		pos.textContent = off.toUpperCase()
+		photo.src = officers[off].photo
+
+		doc.appendChild(photo)
+		doc.appendChild(name)
+		doc.appendChild(pos)
+
+		_("#members").appendChild(doc)
 	}
 }
 

@@ -12,9 +12,9 @@ app.get("/", (req, res) => {
 	res.sendFile(`${__dirname}/frontend/index.html`)
 })
 
-app.get("/all-events", (req, res) => {
+app.get("/all-data", (req, res) => {
 	const json = JSON.parse(fs.readFileSync("a.json", "utf-8"))
-	res.send(JSON.stringify(json.events))
+	res.send(JSON.stringify(json))
 })
 
 app.listen(PORT, () => {
