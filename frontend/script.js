@@ -113,19 +113,21 @@ window.onload = async () => {
 	for(let o in officer){
 		const off = officer[o]
 		const doc = document.createElement("div")
+		const container = document.createElement("div")
 		const name = document.createElement("h3")
 		const pos = document.createElement("h5")
-		const photo = document.createElement("img")
+		// const photo = document.createElement("img")
 
 		doc.classList.add("members-card")
+		doc.style.backgroundImage = `url(${officers[off].photo})`
 
 		name.textContent = officers[off].name
 		pos.textContent = off.toUpperCase()
-		photo.src = officers[off].photo
 
-		doc.appendChild(photo)
-		doc.appendChild(name)
-		doc.appendChild(pos)
+		// doc.appendChild(photo)
+		container.appendChild(name)
+		container.appendChild(pos)
+		doc.appendChild(container)
 
 		_("#members").appendChild(doc)
 	}

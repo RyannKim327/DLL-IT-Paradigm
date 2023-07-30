@@ -171,6 +171,8 @@ body{
 
 .rightSide > #members > .members-card{
 	background-color: #ffffff;
+	background-size: cover;
+	background-position: center;
 	box-shadow: 3px 3px 10px var(--baseColor),
 	-3px -3px 10px var(--baseGray);
 	width: 30%;
@@ -180,12 +182,26 @@ body{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: end;
+	color: var(--baseColor);
+	text-shadow: 0 0 3px var(--baseGray);
+}
+
+.rightSide > #members > .members-card > div {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	background-color: #ffffff50;
+	backdrop-filter: blur(15px);
+	padding: .5em;
+	border-radius: .5em;
 }
 
 .rightSide > #members > .members-card > img{
 	border-radius: .5em;
-	width: 75%;
+	width: 0;
+	margin-bottom: 3em;
 }
 
 .rightSide > #members > .members-card:hover{
