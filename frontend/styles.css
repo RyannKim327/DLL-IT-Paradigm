@@ -85,8 +85,24 @@ body{
 
 .nav > ul > li{
 	cursor: pointer;
-	border-bottom: 1px var(--baseColor) solid;
-	padding: .1em.25em;
+	padding: .1em .25em;
+}
+
+.nav > ul > li::after, .nav > ul > li::before{
+	display: block;
+	background-color: var(--baseColor);
+	content: "";
+	height: 2px;
+	width: 0;
+	transition: width .5s;
+}
+
+.nav > ul > li:before{
+	transition: width 1s;
+}
+
+.nav > ul > li:hover::after, .nav > ul > li:hover::before{
+	width: 100%;
 }
 
 .calendar > .month{
