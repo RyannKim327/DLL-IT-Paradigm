@@ -12,7 +12,7 @@
 :root{
 	--baseMargin: 1em;
 	--basePadding: 1em;
-	--grassWhite: #ffffff10;
+	--grassWhite: #ffffff50;
 	--glassBlur: blur(10px);
 	--radius: .5em;
 	--baseColor: #000000;
@@ -54,24 +54,25 @@ body{
 .leftSide{
 	display: flex;
 	flex-direction: column;
-	align-self: flex-start;
-	justify-self: flex-start;
+	align-content: space-between;
+	justify-content: space-between;
+	align-items: center;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	margin-left: 1.5em;
 }
 
 .leftSide > *{
-	height: 45vh;
 	width: 100%;
 }
 
 .fill{
 	height: 95vh;
+	width: 100%;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	width: 100%;
 }
 
 .nav > h3{
@@ -99,6 +100,7 @@ body{
 	font-weight: bolder;
 	padding: 0 .25em;
 	font-size: xx-large;
+	cursor: pointer;
 }
 
 .calendar > .dates{
@@ -167,6 +169,16 @@ body{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+
+.rightSide > #members::-webkit-scrollbar {
+	width: 1em;
+	background-color: var(--baseGray);
+}
+
+.rightSide > #members::-webkit-scrollbar-thumb {
+	background-color: var(--baseColor);
+
 }
 
 .rightSide > #members > .members-card{
