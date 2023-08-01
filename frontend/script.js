@@ -12,11 +12,25 @@ window.onload = async () => {
 	const allData = await getAllData()
 	const eventData = allData.events
 
+	console.log(allData)
+
+	const introText = "Troubleshooting - Programming - Multimedia Editing".split(" - ")
+	_("#introDLL").textContent = ""
+	let intro = 0
+	function introDLLTyping(){
+		if(intro < introText.length){
+			_("#introDLL").textContent += introText[intro] + (intro < introText.length -1 ? " - " : "")
+			intro++
+			setTimeout(introDLLTyping, 1000)
+		}
+	}
+	introDLLTyping()
+
 	let checkEvent = (month, day, year, start) => {
 		if(start){
 			_("#home").classList.remove("show")
 			_("#announcements").classList.remove("show")
-			_("#members").classList.remove("show")
+			_("#officers").classList.remove("show")
 			_("#events").classList.remove("show")
 			_("#events").classList.add("show")
 		}
@@ -110,6 +124,11 @@ window.onload = async () => {
 
 	let officers =  allData.officers
 	let officer = Object.keys(officers)
+	const officersTitle = document.createElement("h1")
+	officersTitle.textContent = "Officers"
+	officersTitle.style.textAlign = "center"
+	_("#officers").appendChild(officersTitle)
+	const officersContent = document.createElement("div")
 	for(let o in officer){
 		const off = officer[o]
 		const doc = document.createElement("div")
@@ -118,7 +137,7 @@ window.onload = async () => {
 		const pos = document.createElement("h5")
 		// const photo = document.createElement("img")
 
-		doc.classList.add("members-card")
+		doc.classList.add("officers-card")
 		doc.style.backgroundImage = `url(${officers[off].photo})`
 
 		name.textContent = officers[off].name
@@ -128,9 +147,10 @@ window.onload = async () => {
 		container.appendChild(name)
 		container.appendChild(pos)
 		doc.appendChild(container)
-
-		_("#members").appendChild(doc)
+		
+		officersContent.appendChild(doc)
 	}
+	_("#officers").appendChild(officersContent)
 }
 
 function timeConvert(n){

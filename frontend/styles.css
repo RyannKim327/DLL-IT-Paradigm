@@ -17,12 +17,13 @@
 	--radius: .5em;
 	--baseColor: #000000;
 	--baseGray: #dedede;
-	--calendar: #ff0000;
+	--baseYellow: #FEF751;
+	--darkBlue: #002E74;
+	--calendar: var(--darkBlue);
 }
 
 body{
 	background-color: #ffffff;
-	/* background-image: linear-gradient(to bottom right, #FEF604AA, #0D9DF8AA); */
 	background-image: url("/assets/bg.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -86,6 +87,13 @@ body{
 .nav > ul > li{
 	cursor: pointer;
 	padding: .1em .25em;
+	transition: color .5s;
+	transition: text-shadow 1s;
+}
+
+.nav > ul > li:hover{
+	color: var(--baseYellow);
+	text-shadow: 3px 3px 5px var(--baseColor);
 }
 
 .nav > ul > li::after, .nav > ul > li::before{
@@ -180,30 +188,36 @@ body{
 	display: flex !important;
 }
 
-.rightSide > #members {
+.rightSide > #officers {
 	display: none;
+	flex-direction: column;
+}
+
+.rightSide > #officers > div{
+	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
-.rightSide > #members::-webkit-scrollbar {
+.rightSide > #officers > div::-webkit-scrollbar {
 	width: 1em;
 	background-color: var(--baseGray);
 }
 
-.rightSide > #members::-webkit-scrollbar-thumb {
+.rightSide > #officers > div::-webkit-scrollbar-thumb {
 	background-color: var(--baseColor);
 
 }
 
-.rightSide > #members > .members-card{
+.rightSide > #officers > div > .officers-card{
 	background-color: #ffffff;
 	background-size: cover;
 	background-position: center;
 	box-shadow: 3px 3px 10px var(--baseColor),
 	-3px -3px 10px var(--baseGray);
 	width: 30%;
+	min-height: 25vh;
 	margin: .5em;
 	padding: .5em;
 	border-radius: .5em;
@@ -215,7 +229,7 @@ body{
 	text-shadow: 0 0 3px var(--baseGray);
 }
 
-.rightSide > #members > .members-card > div {
+.rightSide > #officers > div > .officers-card > div {
 	display: flex;
 	flex-direction: column;
 	justify-items: center;
@@ -226,13 +240,13 @@ body{
 	border-radius: .5em;
 }
 
-.rightSide > #members > .members-card > img{
+.rightSide > #officers > div > .officers-card > img{
 	border-radius: .5em;
 	width: 0;
 	margin-bottom: 3em;
 }
 
-.rightSide > #members > .members-card:hover{
+.rightSide > #officers > div > .officers-card:hover{
 	animation: ikot-ikot-lang .25s alternate;
 }
 
