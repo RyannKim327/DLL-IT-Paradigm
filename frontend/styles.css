@@ -158,15 +158,22 @@ body{
 
 .rightSide{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	margin-left: 2em;
 	justify-content: center;
+	align-items: center;
 }
 
 .rightSide > .contents{
-	display: none;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	height: 0;
+	width: 0;
+	opacity: 0;
+	transition: opacity .5s;
 }
 
 .rightSide > .contents > h1{
@@ -185,11 +192,15 @@ body{
 }
 
 .rightSide > .show{
-	display: flex !important;
+	color: var(--baseColor);
+	height: auto;
+	width: auto;
+	opacity: 1;
+	transition: opacity .5s;
 }
 
 .rightSide > #officers {
-	display: none;
+	display: flex;
 	flex-direction: column;
 }
 
@@ -198,6 +209,7 @@ body{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	overflow: visible;
 }
 
 .rightSide > #officers > div::-webkit-scrollbar {
@@ -253,9 +265,7 @@ body{
 
 @keyframes tibok-ng-card {
 	0%{
-		scale: 1.2;
-	}50%{
-		scale: 1.5;
+		scale: 1.125;
 	}100%{
 		scale: 1.2;
 	}
@@ -263,16 +273,15 @@ body{
 
 @-webkit-keyframes tibok-ng-card {
 	0%{
-		scale: 1.2;
-	}50%{
-		scale: 1.5;
+		scale: 1.125;
 	}100%{
 		scale: 1.2;
 	}
 }
 
-.rightSide> #events > #images{
+.rightSide> #events{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
 	flex-wrap: wrap ;
 }
