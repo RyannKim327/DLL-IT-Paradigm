@@ -291,6 +291,7 @@ body{
 	.rightSide {
 		display: flex;
 		flex-direction: column;
+		margin: .5em;
 	}
 	.rightSide > .top{
 		display: flex;
@@ -320,5 +321,9 @@ body{
 	}
 	.rightSide > .top > nav > ul > li:nth-child(even){
 		margin:  0 .5em;
+	}
+	.rightSide > #officers > div > .officers-card{
+		min-width: 75% !important;
+		min-height: 50vh !important;
 	}
 }

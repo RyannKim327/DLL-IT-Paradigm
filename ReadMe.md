@@ -7,7 +7,7 @@
 
 ---
 ### Technologies
-> This program is developed with `Node.js®` an open-source, cross-platform JavaScript runtime environment. This program also uses `Vanilla JS, `HTML (Hypertext Markup Language)` and `CSS (Cascading Style Sheet)`.
+> This program is developed with `Node.js®` an open-source, cross-platform JavaScript runtime environment. This program also uses `Vanilla JS`, `HTML (Hypertext Markup Language)` and `CSS (Cascading Style Sheet)`.
 
 ---
 ### Packages
