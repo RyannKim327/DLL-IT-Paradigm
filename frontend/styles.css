@@ -247,26 +247,27 @@ body{
 }
 
 .rightSide > #officers > div > .officers-card:hover{
-	animation: ikot-ikot-lang .25s alternate;
+	animation: tibok-ng-card .5s alternate infinite;
+	z-index: 2;
 }
 
-@keyframes ikot-ikot-lang {
+@keyframes tibok-ng-card {
 	0%{
-		scale: 1;
+		scale: 1.2;
 	}50%{
 		scale: 1.5;
 	}100%{
-		scale: 1;
+		scale: 1.2;
 	}
 }
 
-@-webkit-keyframes ikot-ikot-lang {
+@-webkit-keyframes tibok-ng-card {
 	0%{
-		scale: 1;
+		scale: 1.2;
 	}50%{
-		scale: 3;
+		scale: 1.5;
 	}100%{
-		scale: 1;
+		scale: 1.2;
 	}
 }
 
