@@ -22,6 +22,10 @@ app.get("/all-data", (req, res) => {
 	res.send(JSON.stringify(data))
 })
 
+app.post("/send-announcement", (req, res) => {
+	// Do something
+})
+
 app.listen(PORT, () => {
 	console.log(`Currently Listening to port: ${PORT}`)
 })
