@@ -47,6 +47,7 @@ app.post("/send-announcement", (req, res) => {
 		"resultCode": 200,
 		"message": "New announcement posted on the server"
 	}))
+	// Add something
 })
 
 app.listen(PORT, () => {
