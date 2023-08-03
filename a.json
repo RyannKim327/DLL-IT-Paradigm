@@ -1,4 +1,5 @@
 {
+	"announcements": [],
 	"members": [],
 	"events": {
 		"7-28-2023": {
@@ -9,6 +10,11 @@
 		"8-7-2023": {
 			"title": "Sample",
 			"description": "Sample 2",
+			"images": []
+		},
+		"8-9-2023": {
+			"title": "DLL Graduation Day",
+			"description": "Graduation Day",
 			"images": []
 		}
 	}

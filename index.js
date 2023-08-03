@@ -26,6 +26,11 @@ app.get("/api-officers", (req, res) => {
 	res.send(JSON.stringify(officers))
 })
 
+app.get("/api-announcements", (req, res) => {
+	const json = JSON.parse(fs.readFileSync("a.json", "utf-8"))
+	res.send(JSON.stringify(json.announcements))
+})
+
 app.get("/api-events", (req, res) => {
 	const json = JSON.parse(fs.readFileSync("a.json", "utf-8"))
 	res.send(JSON.stringify(json['events']))
