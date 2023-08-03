@@ -23,7 +23,6 @@ app.get("/all-data", (req, res) => {
 })
 
 app.post("/send-announcement", (req, res) => {
-	// Do something
 	const json = JSON.parse(fs.readFileSync("a.json", "utf-8"))
 })
 
