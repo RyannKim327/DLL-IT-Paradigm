@@ -38,6 +38,15 @@ app.get("/api-events", (req, res) => {
 
 app.post("/send-announcement", (req, res) => {
 	const json = JSON.parse(fs.readFileSync("a.json", "utf-8"))
+	const reqs = req.body
+	const data = {
+		"what": reqs.what
+	}
+	json['announcements'].push(data)
+	res.send(JSON.stringify({
+		"resultCode": 200,
+		"message": "New announcement posted on the server"
+	}))
 })
 
 app.listen(PORT, () => {
