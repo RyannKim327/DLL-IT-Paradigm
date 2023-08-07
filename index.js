@@ -40,14 +40,29 @@ app.post("/send-announcement", (req, res) => {
 	const json = JSON.parse(fs.readFileSync("a.json", "utf-8"))
 	const reqs = req.body
 	let error = []
+	if(reqs.what == ""){
+		error.push("what")
+	}
+	if(reqs.where == ""){
+		error.push("where")
+	}
+	if(reqs.when == ""){
+		error.push("when")
+	}
+	if(reqs.who == ""){
+		error.push("who")
+	}
 	if(error.length > 0){
-		res.send(JSON.stringify({
+		return res.send(JSON.stringify({
 			"statusCode": 403,
 			"message": `Please fill up with corresponding data ${error.join(", ")}.`
 		}))
 	}
 	const data = {
-		"what": reqs.what
+		"what": reqs.what,
+		"where": reqs.where,
+		"when": reqs.when,
+		"who": reqs.who
 	}
 	json['announcements'].push(data)
 	res.send(JSON.stringify({
