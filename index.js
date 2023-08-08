@@ -71,6 +71,15 @@ app.post("/send-announcement", (req, res) => {
 	}))
 })
 
+app.post("/send-events", (req,res) => {
+	const json = JSON.parse(fs.readFileSync("a.json", "utf-8"))
+	const data = req.body
+	const date = data['date']
+	const event = data['event']
+
+	res.send("Data sent")
+})
+
 app.listen(PORT, () => {
 	console.log(`Currently Listening to port: ${PORT}`)
 })
