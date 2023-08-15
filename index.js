@@ -77,7 +77,10 @@ app.post("/send-events", (req,res) => {
 	const date = data['date']
 	const event = data['event']
 
-	res.send("Data sent")
+	res.send(JSON.stringify({
+		"resultCode": 200,
+		"message": "Data sent"
+	}))
 })
 
 app.listen(PORT, () => {
