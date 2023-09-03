@@ -42,11 +42,12 @@ window.onload = async () => {
 			}
 			const today = eventData[`${month + 1}-${day}-${year}`]
 			if(today != undefined){
+				let msg = ``
 				_("#eventToday").textContent = today.title
-				_("#what").textContent = today.description
+				_("#eventDescription").textContent = msg
 			}else{
 				_("#eventToday").textContent = "There's no event here"
-				_("#what-base").innerHTML = ""
+				_("#eventDescription").textContent = ""
 			}
 		}
 
