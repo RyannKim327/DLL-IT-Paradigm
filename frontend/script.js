@@ -44,18 +44,9 @@ window.onload = async () => {
 			if(today != undefined){
 				_("#eventToday").textContent = today.title
 				_("#eventDescription").textContent = today.description
-				if(today.images.length > 0){
-					const eventImg = today.images
-					for(let image = 0; image < eventImg.length; image++){
-						const img = document.createElement("img")
-						img.src = eventImg[image]
-						_("#images").appendChild = img
-					}
-				}
 			}else{
 				_("#eventToday").textContent = "There's no event here"
 				_("#eventDescription").textContent = ""
-				_("#images").innerHTML = ""
 			}
 		}
 
@@ -141,7 +132,6 @@ window.onload = async () => {
 			const container = document.createElement("div")
 			const name = document.createElement("h3")
 			const pos = document.createElement("h5")
-			// const photo = document.createElement("img")
 
 			doc.classList.add("officers-card")
 			doc.style.backgroundImage = `url(${officers[off].photo})`
@@ -149,7 +139,6 @@ window.onload = async () => {
 			name.textContent = officers[off].name
 			pos.textContent = off.toUpperCase()
 
-			// doc.appendChild(photo)
 			container.appendChild(name)
 			container.appendChild(pos)
 			doc.appendChild(container)
