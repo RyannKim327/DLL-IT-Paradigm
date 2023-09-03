@@ -5,17 +5,23 @@
 		"7-28-2023": {
 			"title": "Announcement of Winner",
 			"what": "Test",
-			"images": []
+			"where": "",
+			"when": "",
+			"who": ""
 		},
 		"8-9-2023": {
 			"title": "DLL Graduation Day",
-			"description": "Graduation Day",
-			"images": []
+			"what": "Graduation Day",
+			"where": "",
+			"when": "",
+			"who": ""
 		},
 		"9-3-2023": {
-			"title": "IT Paradigm Presentation Day",
-			"description": "Two teams presents their presentation @ 8:00 am",
-			"images": []
+			"what": "IT Paradigm Presentation Day",
+			"what": "Two teams presents their presentation @ 8:00 am",
+			"where": "",
+			"when": "",
+			"who": ""
 		}
 	}
 }
