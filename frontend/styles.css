@@ -284,6 +284,8 @@ body{
 	flex-wrap: wrap ;
 }
 
+.rightSide > #events > 
+
 @media only screen and (max-width: 1000px){
 	.leftSide{
 		display: none;
