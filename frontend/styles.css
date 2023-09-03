@@ -288,8 +288,6 @@ body{
 	width: 50%;
 	align-self: baseline;
 }
-.rightSide > #events > table{
-}
 
 @media only screen and (max-width: 1000px){
 	.leftSide{
