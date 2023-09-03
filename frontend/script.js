@@ -47,7 +47,7 @@ window.onload = async () => {
 			}else{
 				_("#eventToday").textContent = "There's no event here"
 				_("#eventDescription").textContent = ""
-				
+				_("#what-base").innerHTML = ""
 			}
 		}
 
