@@ -113,6 +113,10 @@ body{
 	width: 100%;
 }
 
+.calendar {
+	min-height: 40vh;
+}
+
 .calendar > .month{
 	display: flex;
 	flex-direction: row;
