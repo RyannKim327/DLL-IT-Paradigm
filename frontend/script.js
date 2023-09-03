@@ -42,7 +42,7 @@ window.onload = async () => {
 			}
 			const today = eventData[`${month + 1}-${day}-${year}`]
 			if(today != undefined){
-				let msg = `There would be an event: ${today.what} to be held in ${today.where} at ${today.}`
+				let msg = `There would be an event: ${today.what} to be held in ${today.where} at ${today.when}. ${today.who} are expected to attend the said event.`
 				_("#eventToday").textContent = today.title
 				_("#eventDescription").textContent = msg
 			}else{
