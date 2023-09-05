@@ -72,7 +72,7 @@ window.onload = async () => {
 					d.style.border = "0"
 				}else{
 					if((month == today.getMonth()) && ((i - day) == today.getDate()) && (year == today.getFullYear())){
-						d.classList.add("clickedDate")
+						d.style.borderColor = "red"
 					}
 					d.textContent = i - day
 					d.onclick = () => {
