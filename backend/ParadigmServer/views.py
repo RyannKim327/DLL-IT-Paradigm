@@ -15,3 +15,6 @@ def event(request):
 		return HttpResponse("<h1>Hi</h1>")
 	else:
 		return HttpResponse("<h1>Error pre</h1>")
+
+def user(request):
+	pass
