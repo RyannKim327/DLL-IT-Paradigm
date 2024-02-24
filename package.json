@@ -1,27 +1,22 @@
 {
-  "name": "it-paradigm-dll",
-  "version": "1.0.0",
-  "main": "script.js",
+  "name": "frontend",
+  "version": "0.0.1",
+  "description": "Frontend of IT Paradigm",
+  "main": "index.ts",
   "scripts": {
-    "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.ts"
   },
-  "dependencies": {
-    "express": "^4.18.2",
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RyannKim327/DLL-IT-Paradigm.git"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "IT-PARADIGM",
+    "DLL-IT-PARADIGM",
+    "DjangoReactJs"
+  ],
+  "author": "RyannKim327",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RyannKim327/DLL-IT-Paradigm/issues"
-  },
-  "homepage": "https://github.com/RyannKim327/DLL-IT-Paradigm#readme",
-  "description": "A web based program"
+  "dependencies": {
+    "axios": "^1.6.7",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
 }

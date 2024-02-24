@@ -11,17 +11,3 @@
 
 ---
 ### Packages
-* ExpressJS [**^4.18.2**]
-```bash
-npm i express --no-bin-links
-```
-
-* FS (File System) [**^0.0.1-security**]
-```bash
-npm i fs
-```
-
-* Path [**^0.12.7**]
-```bash
-npm i path
-```
