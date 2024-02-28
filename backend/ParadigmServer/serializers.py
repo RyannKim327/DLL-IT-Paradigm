@@ -10,3 +10,8 @@ class EventSerializer(serializers.ModelSerializer):
 			"event_description",
 			"event_date"
 		]
+
+class UserSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = User
+		fields = "__all__"
