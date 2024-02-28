@@ -16,9 +16,9 @@ def event(request):
 		event_serializer = EventSerializer(data=data)
 		if event_serializer.is_valid():
 			event_serializer.save()
-			return HttpResponse(f"<h3>Today: {data['event_name']}</h3>")
+			return Response(data=data, status=200)
 		else:
-			return HttpResponse("Invalid inputs")
+			return Response(data=data, status=400)
 
 def user(request):
 	pass

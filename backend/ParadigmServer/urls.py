@@ -7,6 +7,5 @@ ITevents.register(r'events', EventViewSerializer)
 
 urlpatterns = [
 	path('paradigm/', include(ITevents.urls)),
-
-	path("api-event/", event)
+	path("api-event/", event),
 ]
