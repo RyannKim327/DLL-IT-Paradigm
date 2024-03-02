@@ -24,6 +24,8 @@
 3. Typescript
 4. Axios
 5. Nodemon
+6. TailwindCss
+7. Fortawesome (FontAwesome) [Icon]
 
 ---
 ### Note
