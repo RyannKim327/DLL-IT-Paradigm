@@ -14,6 +14,9 @@
 	"author": "RyannKim327",
 	"license": "ISC",
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.5.1",
+		"@fortawesome/free-solid-svg-icons": "^6.5.1",
+		"@fortawesome/react-fontawesome": "^0.2.0",
 		"axios": "^1.6.7",
 		"nodemon": "^3.1.0",
 		"ts-node": "^10.9.2",
