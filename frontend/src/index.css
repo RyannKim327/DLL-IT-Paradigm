@@ -32,3 +32,12 @@ code {
 .header-subtitle{
 	font-size: .75rem;
 }
+
+.footer-title{
+	font-size: 1rem;
+}
+
+.fix-footer{
+	position: fixed;
+	bottom: 0;
+}
