@@ -1,6 +1,6 @@
 export default function Index(){
   return(
-     <div>
+    <div>
       <h1>Welcome to IT Paradigm</h1>
     </div>
   )
