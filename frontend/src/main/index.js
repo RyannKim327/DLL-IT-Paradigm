@@ -1,7 +1,13 @@
+import { Route, Routes } from 'react-router-dom'
+
+import LogReg from './login_registration_form.js'
+
 export default function Index(){
   return(
     <div>
-      <h1>Welcome to IT Paradigm</h1>
+      <Routes>
+        <Route path="/user" element={<LogReg />}/>
+      </Routes>
     </div>
   )
 }

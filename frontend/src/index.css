@@ -41,3 +41,17 @@ code {
 	position: fixed;
 	bottom: 0;
 }
+
+.navigations > *{
+	margin: 0 .25rem;
+	border: 1px transparent solid;
+	padding: 0 .5rem;
+}
+
+.navigations > *:hover{
+	border: 1px rgb(65, 215, 255) solid;
+	border-radius: .5rem;
+	color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.3);
+	transform: scale(1.5, 1.5);
+}
