@@ -27,7 +27,7 @@ export default function Input(props){
     <div>
       <span className="border-2 border-solid border-black rounded p-[0_0.25rem] m-[0_0.25rem]">
         <label style={{cursor: "pointer"}} htmlFor={props.name}>{ (props.icon) ? <FontAwesomeIcon icon={props.icon} /> : ""}{ labelName }</label>
-        <input style={ input } type={props.type} id={props.name} name={props.name} className="bg-transparent" />
+        <input style={ input } onChange={ props.onChange } onClick={ props.onClick } type={props.type} id={props.name} name={props.name} className="bg-transparent" />
         {
           (props.type.toLowerCase() === "password") ?
           <FontAwesomeIcon style={{ cursor: "pointer" }} onClick={() => showHidePassword()} icon={ faEye } /> : <FontAwesomeIcon style={{ color: "transparent" }} icon={ faEyeSlash } />
