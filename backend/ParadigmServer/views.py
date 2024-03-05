@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import status
 
 from .views_serializer_handler import *
 
@@ -19,6 +20,18 @@ def event(request):
 			return Response(data=data, status=200)
 		else:
 			return Response(data=data, status=400)
+
+
+@api_view(['POST'])
+def checkCredentials(request):
+    method = request.method
+    print(method)
+    print(request.data)
+    if method == "POST":
+        data = request.data
+        print(data)
+        return Response(data=data, status=200)
+
 
 def user(request):
 	pass

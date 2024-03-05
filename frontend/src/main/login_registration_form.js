@@ -11,7 +11,7 @@ export default function LogReg(){
  const checkExistence = async (event) => {
   // Mukhang tatamarin dahil sa error hahaha
   console.log("Check")
-  const { data } = await axios.post('http://127.0.0.1:8000/api/api-check-user/', {
+  const data = await axios.post('http://127.0.0.1:8000/api/api-check-user/', {
    "username": "Test"
   })
   console.log(data)
