@@ -12,6 +12,6 @@ urlpatterns = [
 	path('paradigm/users/', include(ITUsers.urls)),
 	path('paradigm/event/', include(ITevents.urls)),
 
-	path("api-event/", event),
-	path("api-check-user/", checkCredentials),
+	path("event/", event),
+	path("check-user/", checkCredentials),
 ]

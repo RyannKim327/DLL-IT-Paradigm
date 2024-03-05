@@ -26,6 +26,7 @@
 5. Nodemon
 6. TailwindCss
 7. Fortawesome (FontAwesome) [Icon]
+8. CORS (Django)
 
 ---
 ### Note
@@ -36,3 +37,20 @@
 	"password": "xxxx xxxx xxxx xxxx"
 }
 ```
+
+---
+### People and inspirations behind this project
+
+#### Mentor and professors
+1. Sir Menard Menemedez
+2. Sir Jose Alfred Magat
+3. Sir Leonard Andrew Mesiera
+4. Sir John Rovie Balingbing
+
+#### Inspirations and Mentors
+1. Salvador
+2. John Roy Lapida Calimlim
+3. Josh Dev
+4. John Jeremy Antiguo
+5. John Paul Caigas
+

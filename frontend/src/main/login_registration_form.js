@@ -1,20 +1,20 @@
 import axios from 'axios'
-import { useState } from 'react'
 import Input from './../widgets/input.js'
 import * as fa from '@fortawesome/free-solid-svg-icons'
 
 export default function LogReg(){
- const [ user, checkUser ] = useState('')
- 
  let buttonValue = "Login"
 
  const checkExistence = async (event) => {
   // Mukhang tatamarin dahil sa error hahaha
-  console.log("Check")
-  const data = await axios.post('http://127.0.0.1:8000/api/api-check-user/', {
-   "username": "Test"
+  const { data } = await axios.post("http://localhost:8000/api/check-user/", {
+   "username": document.getElementById("username").value
   })
-  console.log(data)
+  if(data.status == 200){
+   if(!data.isRegistered){
+    buttonValue = "Register"
+   }
+  }
  }
  
  return(
