@@ -24,12 +24,12 @@ def event(request):
 
 @api_view(['POST'])
 def checkCredentials(request):
-    method = request.method
-    if method == "POST":
-        data = request.data
-        user = UserSerializer(data['username'])
-        print(user)
-        return Response(data=data, status=200)
+	method = request.method
+	if method == "POST":
+		data = request.data
+		user = UserSerializer(data['username'])
+		print(user)
+		return Response(data=data, status=200)
 
 
 def user(request):

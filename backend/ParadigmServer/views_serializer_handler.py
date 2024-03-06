@@ -6,5 +6,5 @@ class EventViewSerializer(viewsets.ModelViewSet):
 	serializer_class = EventSerializer
 
 class UserViewSerializer(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+	queryset = User.objects.all()
+	serializer_class = UserSerializer

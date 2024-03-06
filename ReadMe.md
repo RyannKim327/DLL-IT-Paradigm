@@ -17,6 +17,7 @@
 3. Django Rest Framework
 4. SMTP
 5. SSL
+6. CORS (Django)
 
 #### Typescript/NodeJs
 1. ReactJs
@@ -26,7 +27,6 @@
 5. Nodemon
 6. TailwindCss
 7. Fortawesome (FontAwesome) [Icon]
-8. CORS (Django)
 
 ---
 ### Note
