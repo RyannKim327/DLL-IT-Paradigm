@@ -18,8 +18,8 @@ export default function LogReg(){
 	}
 	return(
 		<div>
-			<form className="flex flex-col box-border">
-				<Input className="border-[#72ddf7] text-[#72ddf7] italic" icon={ fa.faUser } onChange={ checkExistence } type="text" name="username" placeholder="Enter username" />
+			<form className="flex flex-col box-border" autocomplete="false">
+				<Input className="border-[#72ddf7] text-[#72ddf7]" textClass="font-bold italic font-serif" icon={ fa.faUser } onChange={ checkExistence } type="text" name="username" placeholder="Enter username" />
 				<Input className="border-[#72ddf7] text-[#72ddf7]" icon={ fa.faLock } type="password" name="password" placeholder="Enter password" />
 				<input type="submit" value={ buttonValue } />
 			</form>

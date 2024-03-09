@@ -37,7 +37,8 @@ export default function Calendar(props){
 	
 	const baseCalendar = {
 		"display": "flex",
-		"flexDirection": "column"
+		"flexDirection": "column",
+		"userSelect": "none"
 	}
 
 	const months = [
