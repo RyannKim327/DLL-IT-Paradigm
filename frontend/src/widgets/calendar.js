@@ -55,8 +55,8 @@ export default function Calendar(props){
 	let dates = []
 
 	for(let i = 0; i < days.length; i++){
-		if(initialDate.getDay() == i && month == initialDate.getMonth()){
-			dates.push(<span className="text-cyan-800 font-bold">{ days_[i] }</span>)
+		if(initialDate.getDay() === i && month === initialDate.getMonth()){
+			dates.push(<span className="text-[#72ddf7] font-bold">{ days_[i] }</span>)
 		}else{
 			dates.push(<span>{ days_[i] }</span>)
 		}
@@ -66,10 +66,10 @@ export default function Calendar(props){
 		if(i <= day){
 			dates.push(<span></span>)
 		}else{
-			if(initialDate.getMonth() == month && (i - day) == initialDate.getDate() && year == initialDate.getFullYear()){
-				dates.push(<span className="font-bold cursor-pointer border-solid border-sky-800 border-2 rounded-[.25rem] text-sky-800 p-[0.25rem]">{i - day}</span>)
+			if(initialDate.getMonth() === month && (i - day) === initialDate.getDate() && year === initialDate.getFullYear()){
+				dates.push(<span className="font-bold cursor-pointer border-solid border-[#72ddf7] border-2 rounded-[.25rem] text-[#72ddf7] p-[0.25rem]">{i - day}</span>)
 			}else{
-				dates.push(<span className="cursor-pointer border-solid border-black border-2 rounded-[.25rem] text-black p-[0.25rem]">{i - day}</span>)
+				dates.push(<span className="cursor-pointer border-solid border-white border-2 rounded-[.25rem] text-white p-[0.25rem]">{i - day}</span>)
 			}
 		}
 	}

@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import status
 
 from .views_serializer_handler import *
+from .models import *
 
 # Create your views here.
 
@@ -21,16 +22,21 @@ def event(request):
 		else:
 			return Response(data=data, status=400)
 
-
-@api_view(['POST'])
+@api_view(['POST', 'GET'])
 def checkCredentials(request):
 	method = request.method
+	print(method)
 	if method == "POST":
 		data = request.data
-		user = UserSerializer(data['username'])
-		print(user)
-		return Response(data=data, status=200)
-
+		users = UserViewSerializer().get(data['username'])
+		return Response(status=200, data={
+			'existed': len(users) > 0,
+			'username': data['username']
+		})
+	else:
+		return Response(status=200, data="get")
 
 def user(request):
 	pass
+
+

@@ -1,18 +1,19 @@
+import { useState } from 'react' 
 import axios from 'axios'
 import Input from './../widgets/input.js'
 import * as fa from '@fortawesome/free-solid-svg-icons'
 
 export default function LogReg(){
-	let buttonValue = "Login"
+	const [ buttonValue, setNewBtn ] = useState('Register')
 	const checkExistence = async (event) => {
-		// Mukhang tatamarin dahil sa error hahaha
 		const { data } = await axios.post("http://localhost:8000/api/check-user/", {
-		"username": document.getElementById("username").value
+			"username": document.getElementById("username").value
 		})
-		if(data.status == 200){
-			if(!data.isRegistered){
-				buttonValue = "Register"
-			}
+		console.log(data)
+		if(data.existed){
+			setNewBtn("Login")
+		}else{
+			setNewBtn("Register")
 		}
 	}
 	return(
