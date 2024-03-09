@@ -10,6 +10,9 @@ export default function Input(props){
 			labelName = props.placeholer
 		}
 	}
+
+	const _class = props.className || ""
+
 	const input = {
 		outline: "none",
 		marginLeft: ".5rem",
@@ -25,13 +28,13 @@ export default function Input(props){
 
 	return (
 	<div>
-		<span className="border-2 border-solid border-black rounded p-[0_0.25rem] m-[0_0.25rem]">
-		<label style={{cursor: "pointer"}} htmlFor={props.name}>{ (props.icon) ? <FontAwesomeIcon icon={props.icon} /> : ""}{ labelName }</label>
-		<input style={ input } onChange={ props.onChange } onClick={ props.onClick } type={props.type} id={props.name} name={props.name} className="bg-transparent" />
-			{
-				(props.type.toLowerCase() === "password") ?
-				<FontAwesomeIcon style={{ cursor: "pointer" }} onClick={() => showHidePassword()} icon={ faEye } /> : <FontAwesomeIcon style={{ color: "transparent" }} icon={ faEyeSlash } />
-			}
+		<span className={ _class + " border-2 border-solid rounded p-[0_0.25rem] m-[0_0.25rem]" }>
+			<label style={{cursor: "pointer"}} htmlFor={props.name}>{ (props.icon) ? <FontAwesomeIcon icon={props.icon} /> : ""}{ labelName }</label>
+			<input style={ input } onChange={ props.onChange } onClick={ props.onClick } type={props.type} id={props.name} name={props.name} className="bg-transparent" />
+				{
+					(props.type.toLowerCase() === "password") ?
+					<FontAwesomeIcon style={{ cursor: "pointer" }} onClick={() => showHidePassword()} icon={ faEye } /> : <FontAwesomeIcon style={{ color: "transparent" }} icon={ faEyeSlash } />
+				}
 		</span>
 	</div>
 	)
