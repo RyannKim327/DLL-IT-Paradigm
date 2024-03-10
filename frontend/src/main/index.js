@@ -16,9 +16,9 @@ export default function Index(){
 					<h1>DLL IT Paradigm</h1>
 					<hr />
 					<nav className="flex flex-col text-left pl-2 box-border w-full">
-						<Link to="/">Home</Link>
-						<Link to="/events">Events</Link>
-						<Link to="/user">Login</Link>
+						<Link className="hover:text-[#72ddff] hover:border-b-[100%]" to="/">Home</Link>
+						<Link className="hover:text-[#72ddff] hover:border-b-[100%]" to="/events">Events</Link>
+						<Link className="hover:text-[#72ddff] hover:border-b-[100%]" to="/user">Login</Link>
 					</nav>
 				</div>
 				<Calendar className="bluredSection box-border" />

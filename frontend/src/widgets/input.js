@@ -12,11 +12,12 @@ export default function Input(props){
 	}
 
 	const _class = props.className || ""
-
+	const textClass = props.textClass || ""
 	const input = {
 		outline: "none",
 		marginLeft: ".5rem",
 	}
+
 	const showHidePassword = () => {
 		const input = document.getElementById(props.name)
 		if(input.type == "password"){
@@ -28,9 +29,9 @@ export default function Input(props){
 
 	return (
 		<div>
-			<span className={ _class + " border-2 border-solid rounded p-[0_0.3rem]" }>
+			<span className={ _class + " border-2 border-solid rounded p-[0_0.3rem] box-border" }>
 				<label style={{ cursor: "pointer" }} htmlFor={props.name}>{ (props.icon) ? <FontAwesomeIcon icon={props.icon} /> : ""}{ labelName }</label>
-				<input style={ input } className={ props.textClass + " bg-transparent"} onChange={ props.onChange } onClick={ props.onClick } type={ props.type } id={ props.name } name={ props.name }/>
+				<input style={ input } className={ textClass + " bg-transparent w-40 box-border"} onChange={ props.onChange } onClick={ props.onClick } type={ props.type } id={ props.name } name={ props.name }/>
 					{
 						(props.type.toLowerCase() === "password") ?
 						<FontAwesomeIcon style={{ cursor: "pointer" }} onClick={() => showHidePassword()} icon={ faEye } /> : <FontAwesomeIcon style={{ color: "transparent" }} icon={ faEyeSlash } />
