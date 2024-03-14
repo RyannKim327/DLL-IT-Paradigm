@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from	'@fortawesome/react-fontawesome'
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
+import axios from 'axios'
+
 export default function Calendar(props){
 	const initialDate = new Date()
 
@@ -22,6 +24,15 @@ export default function Calendar(props){
 			setMonth(11)
 			setYear(year - 1)
 		}
+	}
+
+	async function checkEvent(month, date, year){
+		let { data } = await axios.post("http://127.0.0.1:8000/api/check-event/", {
+			"month": month,
+			"day": date,
+			"year": year
+		})
+		console.log(data)
 	}
 
 	const date = new Date()
@@ -68,9 +79,9 @@ export default function Calendar(props){
 			dates.push(<span></span>)
 		}else{
 			if(initialDate.getMonth() === month && (i - day) === initialDate.getDate() && year === initialDate.getFullYear()){
-				dates.push(<span className="font-bold cursor-pointer border-solid border-[#72ddf7] border-2 rounded-[.25rem] text-[#72ddf7] p-[0.25rem]">{i - day}</span>)
+				dates.push(<span onClick={ () => { checkEvent(month, (i - day), year) }} className="font-bold cursor-pointer border-solid border-[#72ddf7] border-2 rounded-[.25rem] text-[#72ddf7] p-[0.25rem]">{i - day}</span>)
 			}else{
-				dates.push(<span className="cursor-pointer border-solid border-white border-2 rounded-[.25rem] text-white p-[0.25rem]">{i - day}</span>)
+				dates.push(<span onClick={ ()=> { checkEvent(month, (i - day), year) }} className="cursor-pointer border-solid border-white border-2 rounded-[.25rem] text-white p-[0.25rem]">{i - day}</span>)
 			}
 		}
 	}

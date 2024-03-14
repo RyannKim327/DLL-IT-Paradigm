@@ -6,10 +6,10 @@ import * as fa from '@fortawesome/free-solid-svg-icons'
 export default function LogReg(){
 	const [ buttonValue, setNewBtn ] = useState('Register')
 	const checkExistence = async (event) => {
-		const { data } = await axios.post("http://localhost:8000/api/check-user/", {
+		const { data } = await axios.post("http://127.0.0.1:8000/api/check-user/", {
 			"username": document.getElementById("username").value
 		})
-		console.log(data)
+		console.log(data.username)
 		if(data.existed){
 			setNewBtn("Login")
 		}else{
