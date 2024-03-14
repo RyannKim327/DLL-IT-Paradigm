@@ -50,11 +50,11 @@ def checkCredentials(request):
 		users = UserViewSerializer().get(data['username'])
 		username = ""
 		if len(users) > 0:
-			# username = users.values('user__username')
-			print(users.values('username'))
+			newData = users.values('username')
+			# print(users.values('username'))
 		return Response(status=200, data={
 			'existed': len(users) > 0,
-			'username': str(solar(username))
+			'username': str(solar(data['username']))
 		})
 	else:
 		return Response(status=200, data="get")
