@@ -7,6 +7,22 @@ from rest_framework.views import status
 from .views_serializer_handler import *
 from .models import *
 
+class solar:
+	def __init__(self, text: str, encrypt: bool = True):
+		self.__character = ""
+		if text != "":
+			if encrypt:
+				for i in range(len(text)):
+					a = ord(text[i]) + ((i % 26) + 1)
+					self.__character += chr(a)
+			else:
+				for i in range(len(text)):
+					a = ord(text[i]) - ((i % 26) + 1)
+					self.__character += chr(a)
+
+	def __str__(self):
+		return self.__character
+
 # Create your views here.
 
 @api_view(["POST"])
@@ -31,7 +47,7 @@ def checkCredentials(request):
 		users = UserViewSerializer().get(data['username'])
 		return Response(status=200, data={
 			'existed': len(users) > 0,
-			'username': data['username']
+			'username': str(solar(data['username']))
 		})
 	else:
 		return Response(status=200, data="get")
