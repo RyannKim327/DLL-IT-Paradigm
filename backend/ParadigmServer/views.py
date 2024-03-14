@@ -30,7 +30,10 @@ def event(request):
 	method = request.method
 	if method == "POST":
 		data = request.data
-
+		month = data['month']
+		day = data['day']
+		year = data['year']
+		date = f"{year}-{month}-{day}"
 		event_serializer = EventSerializer(data=data)
 		if event_serializer.is_valid():
 			event_serializer.save()
@@ -45,14 +48,41 @@ def checkCredentials(request):
 	if method == "POST":
 		data = request.data
 		users = UserViewSerializer().get(data['username'])
+		username = ""
+		if len(users) > 0:
+			# username = users.values('user__username')
+			print(users.values('username'))
 		return Response(status=200, data={
 			'existed': len(users) > 0,
-			'username': str(solar(data['username']))
+			'username': str(solar(username))
 		})
 	else:
 		return Response(status=200, data="get")
 
 def user(request):
 	pass
+
+@api_view(['POST'])
+def fetchEvent(request):
+	method = request.method
+	if method == 'POST':
+		data = request.data
+		month = data['month']
+		day = data['day']
+		year = data['year']
+		result = EventViewSerializer().get(f"{year}-{month}-{day}")
+		eventName = "No Event found"
+		eventDescription = "No Event Here"
+		if len(result) > 0:
+			print("E di meron")
+			print(result)
+		return Response(status=200, data={
+			"eventName": eventName,
+			"eventDescription": eventDescription
+		})
+
+
+
+
 
 

@@ -1,3 +1,4 @@
+from datetime import datetime
 from rest_framework import viewsets
 from .serializers import *
 
@@ -6,7 +7,8 @@ class EventViewSerializer(viewsets.ModelViewSet):
 	serializer_class = EventSerializer
 
 	def get(self, key):
-		return Event.objects.get(key)
+		newDate = datetime.strptime(key, '%Y-%m-%d').date()
+		return Event.objects.filter(event_date=key)
 
 class UserViewSerializer(viewsets.ModelViewSet):
 	queryset = User.objects.all()

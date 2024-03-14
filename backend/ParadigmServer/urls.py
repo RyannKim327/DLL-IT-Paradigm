@@ -14,4 +14,5 @@ urlpatterns = [
 
 	path("event/", event),
 	path("check-user/", checkCredentials),
+	path("check-event/", fetchEvent),
 ]
