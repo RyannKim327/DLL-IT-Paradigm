@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, HttpResponse
 
 from rest_framework.decorators import api_view
@@ -48,13 +49,15 @@ def checkCredentials(request):
 	if method == "POST":
 		data = request.data
 		users = UserViewSerializer().get(data['username'])
-		username = ""
+		newData = {
+			"username": ""
+		}
 		if len(users) > 0:
-			newData = users.values('username')
-			# print(users.values('username'))
+			newData = users.values('username').get()
+			print(newData['username'])
 		return Response(status=200, data={
 			'existed': len(users) > 0,
-			'username': str(solar(data['username']))
+			'username': str(solar(newData['username']))
 		})
 	else:
 		return Response(status=200, data="get")
