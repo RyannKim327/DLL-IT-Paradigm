@@ -9,16 +9,17 @@ import Events from './events.js'
 import Calendar from './../widgets/calendar.js'
 
 export default function Index(){
+	// TODO: To create a base for easy accesss to the linked webpages created to the UI
 	return(
 		<div className="flex flex-row h-[85%]">
-			<div className="flex flex-col justify-between text-white">
-				<div className="bluredSection">
+			<div className="flex flex-col text-white">
+				<div className="bluredSection h-full box-border">
 					<h1>DLL IT Paradigm</h1>
 					<hr />
-					<nav className="flex flex-col text-left pl-2 box-border w-full">
-						<Link className="hover:text-[#72ddff] hover:border-b-[100%]" to="/">Home</Link>
-						<Link className="hover:text-[#72ddff] hover:border-b-[100%]" to="/events">Events</Link>
-						<Link className="hover:text-[#72ddff] hover:border-b-[100%]" to="/user">Login</Link>
+						<nav className="flex flex-col text-left pl-2 box-border w-full h-[100%]">
+						<Link className="hover:text-[#efde50] hover:border-b-[100%]" to="/">Home</Link>
+						<Link className="hover:text-[#efde50] hover:border-b-[100%]" to="/events">Events</Link>
+						<Link className="hover:text-[#efde50] hover:border-b-[100%]" to="/user">Login</Link>
 					</nav>
 				</div>
 				<Calendar className="bluredSection box-border" />

@@ -2,75 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=KOde+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=KOde+Mono&display=swap");
 
 body {
-	background: #ffefde;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  background: #ffefde;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .fjalla {
-	font-family: "Fjalla One", sans-serif;
-	font-weight: 400;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
 }
 
 .kode {
-	font-family: "Kode Mono", monospace;
-	font-weight: 400;
+  font-family: "Kode Mono", monospace;
+  font-weight: 400;
 }
 
 .header-title {
-	font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .header-subtitle {
-	font-size: .65rem;
+  font-size: 0.65rem;
 }
 
 .footer-title {
-	font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .fix-footer {
-	position: fixed;
-	bottom: 0;
+  position: fixed;
+  bottom: 0;
 }
 
-.navigations>* {
-	margin: 0 .25rem;
-	border: 1px transparent solid;
-	padding: 0 .5rem;
-	font-size: .9rem;
+.navigations > * {
+  margin: 0 0.25rem;
+  border: 1px transparent solid;
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
 }
 
-.navigations>*:hover {
-	border: 1px rgb(65, 215, 255) solid;
-	border-radius: .5rem;
-	color: #ffffff;
-	background-color: rgba(0, 0, 0, 0.3);
-	transform: scale(1.5, 1.5);
+.navigations > *:hover {
+  border: 1px rgb(65, 215, 255) solid;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: scale(1.5, 1.5);
 }
 
 .bluredSection {
-	background-color: rgba(0, 0, 0, 0.3);
-	backdrop-filter: blur(10px);
-	padding: .5rem;
-	margin: .5rem;
-	color: white;
-	border-radius: .3rem;
+  background-color: rgba(11, 11, 11, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: white;
+  border-radius: 0.3rem;
 }
 
 main {
-	background-color: rgba(0, 0, 0, 0.3);
-	color: white;
-	backdrop-filter: blur(10px);
-	margin: .5rem;
-	border-radius: .5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  backdrop-filter: blur(10px);
+  margin: 0.5rem;
+  border-radius: 0.5rem;
 }
