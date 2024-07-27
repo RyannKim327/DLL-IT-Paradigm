@@ -5,8 +5,8 @@
 ### Table of Contents
 | | |
 |---|---|
-| [#introduction](Introduction) | [#installation](Installation) |
-| [#open-the-project-again](Open the Project) | [#how-to-start](How to start) |
+| (#introduction)[Introduction] | (#installation)[Installation] |
+| (#open-the-project-again)[Open the Project] | [#how-to-start)[How to start] |
 
 ---
 ### Introduction
