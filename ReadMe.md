@@ -7,7 +7,11 @@
 
 ---
 ### Technologies
-> This program is developed with `Node.js®` an open-source, cross-platform JavaScript runtime environment. This program also uses `Vanilla JS`, `HTML (Hypertext Markup Language)` and `CSS (Cascading Style Sheet)`.
+> This program is developed with `DJango` and `ReactJs` which connected by `Django Rest Framework`.
+
+---
+### How To
+> For the step by step tutorial, kindly visit [this link](how-to.md)
 
 ---
 ### Packages
