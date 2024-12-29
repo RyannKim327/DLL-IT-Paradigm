@@ -2,11 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-interface calendar {
-  className?: string;
-}
-
-const Calendar = (props: calendar) => {
+const Calendar = (props: any) => {
   const _date = new Date();
 
   const [month, setMonth] = useState(_date.getMonth());
@@ -63,13 +59,13 @@ const Calendar = (props: calendar) => {
   ];
 
   // TODO: To store the days
-  const dates = [];
+  let dates = [];
 
   for (let i = 0; i < days.length; i++) {
     if (_date.getDay() === i && month === _date.getMonth()) {
       dates.push(
-        <span className="rounded font-bold text-green-900">
-          <span className="p-[0.25rem] rounded-md">
+        <span className="font-bold text-white">
+          <span className="bg-sky-500 p-[0.25rem] rounded-md">
             {days[i].substring(0, 3)}
           </span>
         </span>,
@@ -87,27 +83,19 @@ const Calendar = (props: calendar) => {
     if (i <= day) {
       dates.push(<span></span>);
     } else {
-      let border = "border-black";
-      if ((i - day) % 7 == 1) {
-        border = "border-red-500";
-      }
       if (
         _date.getMonth() === month &&
         i - day === _date.getDate() &&
         _date.getFullYear() === year
       ) {
         dates.push(
-          <span
-            className={`border-[2px] border-solid ${border} bg-black rounded text-end font-bold text-white`}
-          >
-            <span className="p-[0.25rem]">{i - day}</span>
+          <span className="font-bold text-white">
+            <span className="bg-sky-500 p-[0.25rem] rounded-md">{i - day}</span>
           </span>,
         );
       } else {
         dates.push(
-          <span
-            className={`border-[2px] border-solid ${border} rounded text-end font-bold text-black`}
-          >
+          <span className="font-thin text-sky-900">
             <span className="p-[0.25rem]">{i - day}</span>
           </span>,
         );
@@ -117,12 +105,11 @@ const Calendar = (props: calendar) => {
 
   const calendar_ = {
     display: "grid",
-    gap: ".25rem",
     gridTemplateColumns: "auto auto auto auto auto auto auto",
   };
 
   return (
-    <div className={`${props.className ?? ""} flex flex-col p-2 select-none`}>
+    <div className="flex flex-col p-2 select-none">
       <header className="flex flex-row justify-between items-center">
         <FontAwesomeIcon
           className="text-2xl"
